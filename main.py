@@ -1,12 +1,13 @@
 import pygame
 import random
+import os
 
 # SET DISPLAY 
 pygame.init()
 display_width = 400
 display_height = 300
 display = pygame.display.set_mode((display_width, display_height))
-snake_icon = pygame.image.load("C:/Users/geral/desktop/SNAKE_PYTHON/assets/snake.png")
+snake_icon = pygame.image.load(os.path.join("assets", "snake.png"))
 pygame.display.set_icon(snake_icon)
 pygame.display.set_caption("snake.py - A Python Adventure")
 clock = pygame.time.Clock()
@@ -24,7 +25,7 @@ def game_intro():
 
         # MUSIC
         pygame.mixer.init()
-        pygame.mixer.music.load("C:/Users/geral/desktop/SNAKE_PYTHON/assets/main_menu.mp3")
+        pygame.mixer.music.load(os.path.join("assets", "main_menu.mp3"))
         pygame.mixer.music.play(-1)
 
         # LOGIC TO END GAME IN INTRO
@@ -37,7 +38,7 @@ def game_intro():
 
         # SET INTRO DISPLAY
         # LOGOTYPE
-        snakepy_logo = pygame.image.load("C:/Users/geral/desktop/SNAKE_PYTHON/assets/snakepy.png")
+        snakepy_logo = pygame.image.load(os.path.join("assets", "snakepy.png"))
         snakepy_logo_rect = snakepy_logo.get_rect()
         snakepy_logo_rect.center = (display_width // 2, display_height // 2)
         display.blit(snakepy_logo, snakepy_logo_rect)
